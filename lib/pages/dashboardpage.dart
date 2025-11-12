@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:smartschool/pages/rosterku.dart';
 
 class Dashboardpage extends StatefulWidget {
   const Dashboardpage({super.key});
@@ -8,8 +10,12 @@ class Dashboardpage extends StatefulWidget {
 }
 
 class _DashboardpageState extends State<Dashboardpage> {
+  
+
   @override
   Widget build(BuildContext context) {
+    final String today =
+      DateFormat("dd MMM yyyy").format(DateTime.now());
     return Scaffold(
       backgroundColor: Color(0xFF0A3DDE),
       body: Column(
@@ -37,7 +43,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      "Dashboard",
+                      "Hi..Arjuna",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 24,
@@ -46,7 +52,7 @@ class _DashboardpageState extends State<Dashboardpage> {
                     ),
                     SizedBox(height: 5),
                     Text(
-                      "Last Update 25 Feb 2020",
+                      "Terakhir update $today",
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                   ],
@@ -72,27 +78,33 @@ class _DashboardpageState extends State<Dashboardpage> {
                       Row(
                         children: [
                           Flexible(
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black12,
-                                    blurRadius: 6,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: [
-                                    Image.asset('assets/images/list.png',width: 150,),
-                                    SizedBox(height: 10,),
-                                    Text('Rosterku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
+                            child: GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Rosterku()));
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                              
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black12,
+                                      blurRadius: 6,
+                                      offset: Offset(0, 3),
+                                    ),
                                   ],
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset('assets/images/list.png',width: 150,),
+                                      SizedBox(height: 10,),
+                                      Text('Rosterku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
