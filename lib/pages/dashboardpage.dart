@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:smartschool/pages/mapelku.dart';
 import 'package:smartschool/pages/rosterku.dart';
 //import 'package:smartschool/pages/rosterku.dart';
 
@@ -79,32 +80,35 @@ class _DashboardpageState extends State<Dashboardpage> {
                       Row(
                         children: [
                           Flexible(
-                            child: GestureDetector(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Rosterku()));
-                              },
-                              child: Container(
-                                width: MediaQuery.of(context).size.width,
-                              
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black12,
-                                      blurRadius: 6,
-                                      offset: Offset(0, 3),
-                                    ),
-                                  ],
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Image.asset('assets/images/list.png',width: 150,),
-                                      SizedBox(height: 10,),
-                                      Text('Rosterku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Rosterku()));
+                                },
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        offset: Offset(0, 3),
+                                      ),
                                     ],
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Image.asset('assets/images/list.png',width: 150,),
+                                        SizedBox(height: 10,),
+                                        Text('Rosterku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -112,27 +116,35 @@ class _DashboardpageState extends State<Dashboardpage> {
                           ),
                           SizedBox(width: 10),
                           Flexible(
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black12,
-                                    blurRadius: 6,
-                                    offset: Offset(0, 3),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Mapelku()));
+                                },
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black12,
+                                        blurRadius: 6,
+                                        offset: Offset(0, 3),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  children: [
-                                    Image.asset('assets/images/maths.png',width: 150,),
-                                    SizedBox(height: 10,),
-                                    Text('Mapelku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
-                                  ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Column(
+                                      children: [
+                                        Image.asset('assets/images/maths.png',width: 150,),
+                                        SizedBox(height: 10,),
+                                        Text('Mapelku',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),)
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
